@@ -9,7 +9,7 @@ public class LoginQueueManager : MonoBehaviour
     private string[] firstNames = new string[]
     {
         "Flor", "Nelson", "Mitch", "Duck", "Pancake", "Chris", "Toph",
-        "Elias", "Alex", "Sam", "Dylan", "Avery", "Riley", "Casey",
+        "Elias", "Jordan", "Tino", "Jose", "Juan", "Riley", "Casey",
         "Jamie", "Morgan", "Reese", "Parker", "Quinn", "Blake",
         "Cameron", "Elliot", "Rowan", "Skyler", "Dakota"
     };
@@ -25,9 +25,11 @@ public class LoginQueueManager : MonoBehaviour
 
     void Start()
     {
-        // Create initial queue (4–6 players)
+        // Create initial queue of players already waiting
         int initialCount = Random.Range(4, 7);
 
+
+ // Adds a player each loop
         for (int i = 0; i < initialCount; i++)
         {
             loginQueue.Enqueue(GetRandomPlayerName());
