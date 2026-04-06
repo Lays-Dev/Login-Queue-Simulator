@@ -8,22 +8,28 @@ public class LoginQueueManager : MonoBehaviour
     // Name libraries
     private string[] firstNames = new string[]
     {
-        "Carol", "Adam", "Maria", "John", "Leila", "Chris", "Jordan",
-        "Taylor", "Alex", "Sam", "Dylan", "Avery", "Riley", "Casey",
+        "Flor", "Nelson", "Mitch", "Duck", "Pancake", "Chris", "Toph",
+        "Elias", "Jordan", "Tino", "Jose", "Juan", "Riley", "Casey",
         "Jamie", "Morgan", "Reese", "Parker", "Quinn", "Blake",
         "Cameron", "Elliot", "Rowan", "Skyler", "Dakota"
     };
 
+// char[] is an array of characters.
+// .ToCharArray() converts a string into an array of characters
+// lastInitials = variable name
     private char[] lastInitials = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
-    // Queue
+    // Queue<string> stores a list of strings FIFO
+    // FIFO (first in, first out)
     private Queue<string> loginQueue = new Queue<string>();
 
     void Start()
     {
-        // Create initial queue (4–6 players)
+        // Create initial queue of players already waiting
         int initialCount = Random.Range(4, 7);
 
+
+ // Adds a player each loop
         for (int i = 0; i < initialCount; i++)
         {
             loginQueue.Enqueue(GetRandomPlayerName());
